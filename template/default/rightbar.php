@@ -4,7 +4,7 @@
                 <?php if($right_news): ?>
                     <?php foreach($right_news as $r): ?>
                         <div class="right-news">
-                            <span class="time"><?=date("H:m",$r['date']) ?></span>
+                            <span class="time"><?=date("H:i",$r['date']) ?></span>
                             <span class="text"><a href="<?=SITE_URL ?>post/id/<?=$r['id'] ?>"><?=$r['title'] ?></a></span>
                             <hr>
                         </div>

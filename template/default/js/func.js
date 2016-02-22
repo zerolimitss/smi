@@ -63,7 +63,7 @@ $(document).ready(function(){
 	$('#categoryArchive').change(function(){
 		var x = $('#categoryArchive option:selected').val();
 		//alert(x);
-		var s = "/realnews/archive/id/"+x;
+		var s = "http://web.hhos.ru/archive/id/"+x;
 		location.replace(s);
 	})
 

@@ -11,7 +11,7 @@ class Edit extends Admin_Base
     {
         parent::input();
         $this->category = $this->obm_u->get_category();
-        $model = MODEL::get_instance();
+
 
         if(isset($par['del'])){
             $id = (int)$par['del'];
@@ -33,10 +33,9 @@ class Edit extends Admin_Base
             $this->message = $form->message;
             $this->error=$form->error;
         }
-
         $this->post = $this->obm_u->get_post_by_id($this->post_id);
         $this->subcatid = (int)$this->post['c1id'];
-        $this->subcatarray = $model->get_subcat($this->subcatid);
+        $this->subcatarray = $this->obm_u->get_sub_category($this->subcatid);
     }
 
     protected function output()

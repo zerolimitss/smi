@@ -14,7 +14,7 @@
                     <span class="cat"><?=$main_news['ttt'] ?></span>
                     <span class="date"><?=dateMain($main_news['date']); ?></span>
                     <h2><a href="<?=SITE_URL ?>post/id/<?=$main_news['id'] ?>"><?=$main_news['title'] ?></a></h2>
-                    <p><a href="<?=SITE_URL ?>post/id/<?=$main_news['id'] ?>#"><?=$main_news['anons'] ?></a> </p>
+                    <p><a href="<?=SITE_URL ?>post/id/<?=$main_news['id'] ?>"><?=$main_news['anons'] ?></a> </p>
                 </div>
 
         <?php endif; ?>

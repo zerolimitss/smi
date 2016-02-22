@@ -9,7 +9,7 @@ class Get_Params extends Base
         $url = $_SERVER['REQUEST_URI'];
         $url = substr($url,1);
         $arr = explode('/',$url);
-        array_shift($arr);
+        //array_shift($arr);
         if(!empty($arr[0])){
             $this->name_controller = ucfirst($this->clear_str($arr[0]));
             if(isset($arr[1]) && isset($arr[2])){

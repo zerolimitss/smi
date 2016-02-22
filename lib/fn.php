@@ -1,14 +1,13 @@
 <?php
 function dateMain($str,$t=false)
 {
-    //$r = strftime("- %d %B %Y", $str);
     $d = strftime(" %d ", $str);
     if(strpos($d,'0')==1){
         $d = substr($d, 2,1);
     }
     $y = strftime(" %Y", $str);
     $m = strftime("%B", $str);
-    $m = iconv("CP1251","UTF-8",$m);
+    //$m = iconv("CP1251","UTF-8",$m);
     $m = substr($m,0,-2);
     if($m==='Мар' || $m==='Авгус'){
         $m=$m.'та';

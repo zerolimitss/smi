@@ -22,6 +22,7 @@ class MySQL
             die("Ошибка подключения к бд: " .
                 $this->db->connect_errno. $this->db->connect_error);
         }
+        $this->db->query("SET NAMES UTF8");
     }
 
     public function get_query($sql)

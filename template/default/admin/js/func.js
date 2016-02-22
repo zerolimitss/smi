@@ -95,7 +95,7 @@ $(document).ready(function(){
 	//переход в другую категорию
 	$('#categoryNews').change(function(){
 		var x = $('#categoryNews option:selected').val();
-		var s = "/realnews/news/id/"+x;
+		var s = "http://web.hhos.ru/news/id/"+x;
 		location.replace(s);
 	})
 
@@ -139,7 +139,7 @@ $(document).ready(function(){
 			return false;
 		}
 
-		if($('#text').val().length==0 || $('#text').val().length>255) {
+		if($('#text').val().length==0 ) {
 			$('#text').css('border','1px solid red');
 			return false;
 		}
