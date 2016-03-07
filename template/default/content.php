@@ -26,7 +26,7 @@
 
                     <?php if($n['main_new']==0): ?>
                         <div class="other-news-blocks-i">
-                            <span class="cat"><?=date("m:s",$n['date']) ?></span><span class="date"> <?=Utilities::today($n['date']); ?></span>
+                            <span class="cat"><?=date("G:s",$n['date']) ?></span><span class="date"> <?=Utilities::today($n['date']); ?></span>
                             <h4><a href="<?=SITE_URL ?>post/id/<?=$n['id'] ?>"><?=$n['title'] ?></a></h4>
                             <hr>
                         </div>
