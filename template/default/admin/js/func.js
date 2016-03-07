@@ -7,7 +7,7 @@ $(document).ready(function(){
 		$('#adminsubcat').attr('disabled', true);
 		$('#adminsubcat').html('<option>загрузка...</option>');
 		$.get(
-			"lib/test.php",
+			"lib/ajaxAdmin.php",
 			{ id: id },
 			function( data ) {
 				var options = '';
@@ -28,7 +28,7 @@ $(document).ready(function(){
 		$('#adminsubcat').attr('disabled', true);
 		$('#adminsubcat').html('<option>загрузка...</option>');
 		$.get(
-			"../../lib/test.php",
+			"../../lib/ajaxAdmin.php",
 			{ id: id },
 			function( data ) {
 				var options = '';
