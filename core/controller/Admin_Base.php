@@ -12,8 +12,8 @@ abstract class Admin_Base extends Base
     protected $styles;
     protected $scripts;
     protected $user = true;
-    protected $error;
-    protected $message;
+    protected $error="";
+    protected $message="";
 
     protected function input($par = [])
     {
