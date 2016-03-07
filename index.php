@@ -9,7 +9,6 @@ set_include_path(get_include_path().PATH_SEPARATOR.
                     CONTROLLER.PATH_SEPARATOR.
                     LIB
                     );
-include_once 'fn.php';
 
 function __autoload($name)
 {

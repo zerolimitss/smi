@@ -28,7 +28,7 @@ class Login extends Admin_Base
                 $_SESSION['login']=$login;
                 $data=time().'|['.$login.']|'.$_SERVER['REMOTE_ADDR']."|Зашел"."\n";
                 file_put_contents('admin-login.txt',$data,FILE_APPEND);
-                redir_to(SITE_URL."admin");
+                Utilities::redir_to(SITE_URL."admin");
             }else{
                 $data=time().'|['.$login.'='.$pass.']|'.$_SERVER['REMOTE_ADDR']."|Ошибка входа"."\n";
                 file_put_contents('admin-login.txt',$data,FILE_APPEND);

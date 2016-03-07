@@ -7,7 +7,7 @@
     <div class="dop-menu">
         <a <?php if(empty($subid)) echo "class=\"active\"" ?> href="<?=SITE_URL ?>category/id/<?=$catid  ?>">Все</a>
         <?php foreach($subcategory as $k): ?>
-            <?php $a=active($k['id'],$subid)?>
+            <?php $a=Utilities::active($k['id'],$subid)?>
         <a <?=$a ?> href="<?=SITE_URL ?>category/id/<?=$catid  ?>/sub/<?=$k['id'] ?>"><?=$k['title'] ?></a>
         <?php endforeach; ?>
         <a href="<?=SITE_URL ?>archive/id/<?=$catid  ?>">Архив</a>
@@ -35,7 +35,7 @@
             <?php if($last_news): ?>
                 <?php foreach($last_news as $n): ?>
                 <div class="other-news-blocks-i">
-                    <span class="cat"><?=date("m:s",$n['date']) ?></span><span class="date"> <?=today($n['date']); ?></span>
+                    <span class="cat"><?=date("m:s",$n['date']) ?></span><span class="date"> <?=Utilities::today($n['date']); ?></span>
                     <h4><a href="<?=SITE_URL ?>post/id/<?=$n['id'] ?>"><?=$n['title'] ?></a></h4>
                     <hr>
                 </div>

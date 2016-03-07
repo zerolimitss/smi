@@ -1,15 +1,6 @@
 <div class="main-content">
     <div class="main-content-block">
-        <?php if($error): ?>
-            <ul class="errormes">
-                <?php foreach($error as $e): ?>
-                    <li><?=$e ?></li>
-                <?php endforeach; ?>
-            </ul>
-        <?php endif; ?>
-        <?php if($message): ?>
-            <p class="message"><?=$message ?></p>
-        <?php endif; ?>
+        <?=Utilities::errorOrMessage($error,$message); ?>
         <h2>Редактировать категории</h2>
         <?php if($category): ?>
             <br>

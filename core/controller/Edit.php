@@ -16,16 +16,16 @@ class Edit extends Admin_Base
         if(isset($par['del'])){
             $id = (int)$par['del'];
             if($this->obm_u->delete($id)){
-                redir_to(SITE_URL."news/mes/".urlencode("Новость удалена"));
+                Utilities::redir_to(SITE_URL."news/mes/".urlencode("Новость удалена"));
             }else{
-                redir_to(SITE_URL."news/mes/".urlencode("Возникли проблеммы при удалении"));
+                Utilities::redir_to(SITE_URL."news/mes/".urlencode("Возникли проблеммы при удалении"));
             }
         }
 
         if(isset($par['id'])){
             $this->post_id = (int)$par['id'];
         }else{
-            redir_to(SITE_URL."news/");
+            Utilities::redir_to(SITE_URL."news/");
         }
 
         if($_SERVER['REQUEST_METHOD']=='POST'){

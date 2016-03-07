@@ -45,7 +45,7 @@
                             <span class="cat"><?=$n['ttt'] ?></span>
                         </div>
                         <div class="ir">
-                            <span class="date"> <?=today($n['date']); ?></span>
+                            <span class="date"> <?=Utilities::today($n['date']); ?></span>
                         </div>
                         <div class="clr"></div>
                         <h3><a href="<?=SITE_URL ?>edit/id/<?=$n['id'] ?>"><?=$n['title'] ?></a></h3>

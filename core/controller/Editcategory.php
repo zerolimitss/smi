@@ -27,12 +27,12 @@ class Editcategory extends Admin_Base
             if($res) {
                 if(isset($par['del'])) $this->message = "Категория успешно удалена";
                 else $this->message = "Подкатегория успешно удалена";
-                redir_to(SITE_URL."showcategory/mes/".urlencode($this->message));
+                Utilities::redir_to(SITE_URL."showcategory/mes/".urlencode($this->message));
             }
             else{
                 if(isset($par['del'])) $this->message = "Возникли проблемы при удалении категории";
                 else $this->message = "Возникли проблемы при удалении подкатегории";
-                redir_to(SITE_URL."showcategory/error/".urlencode($this->message));
+                Utilities::redir_to(SITE_URL."showcategory/error/".urlencode($this->message));
             }
         }
 
@@ -49,7 +49,7 @@ class Editcategory extends Admin_Base
             if($res) {
                 if(isset($parent)) $this->message = "Подкатегория успешно обновлена";
                 else $this->message = "Категория успешно обновлена";
-                redir_to(SITE_URL."showcategory/mes/".urlencode($this->message));
+                Utilities::redir_to(SITE_URL."showcategory/mes/".urlencode($this->message));
             }
             else{
                 if(isset($parent)) $this->error[] = "Возникли проблемы при изменении подкатегории";

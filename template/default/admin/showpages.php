@@ -1,15 +1,6 @@
 <div class="main-content">
     <div class="main-content-block">
-        <?php if($error): ?>
-            <ul class="errormes">
-                <?php foreach($error as $e): ?>
-                    <li><?=$e ?></li>
-                <?php endforeach; ?>
-            </ul>
-        <?php endif; ?>
-        <?php if($message): ?>
-            <p class="message"><?=$message ?></p>
-        <?php endif; ?>
+        <?=Utilities::errorOrMessage($error,$message); ?>
 
         <?php if(isset($title)): ?>
             <h2><?=$title ?></h2>

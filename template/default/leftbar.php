@@ -5,7 +5,7 @@
 			<li><a href="<?=SITE_URL ?>" <?php if(empty($catid)) echo "class=\"active\"" ?>>Главная</a></li>
 			<?php if($left_menu): ?>
 				<?php foreach($left_menu as $k): ?>
-					<?php $a=active($k['id'],$catid)?>
+					<?php $a=Utilities::active($k['id'],$catid)?>
 					<li><a <?=$a ?> href="<?=SITE_URL ?>category/id/<?=$k['id'] ?>"><?=$k['title'] ?></a></li>
 				<?php endforeach; ?>
 			<?php endif; ?>

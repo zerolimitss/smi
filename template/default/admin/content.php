@@ -1,15 +1,6 @@
     <div class="main-content">
         <div class="main-content-block">
-            <?php if($error): ?>
-                <ul class="errormes">
-                    <?php foreach($error as $e): ?>
-                        <li><?=$e ?></li>
-                    <?php endforeach; ?>
-                </ul>
-            <?php endif; ?>
-            <?php if($message): ?>
-                <p class="message"><?=$message ?></p>
-            <?php endif; ?>
+            <?=Utilities::errorOrMessage($error,$message); ?>
             <h2>Добавить новость</h2>
             <form id="action" action="<?=SITE_URL ?>admin" method="post" enctype="multipart/form-data">
                 <p><span>Заголовок: </span><input type="text" id="head" class="txt" name="header"></p>
@@ -60,7 +51,7 @@
         <div class="right-main">
             <div class="h4">Логи посещений</div>
             <?php if($logs): ?>
-                <?php for($i=count($logs)-1;$i>count($logs)-1-5;$i--): ?>
+                <?php for($i=0;$i<count($logs);$i++): ?>
                     <?php $m = explode('|',$logs[$i]); ?>
                     <div class="right-news">
                         <span class="time"><?=date("h:i d-m-Y", $m[0]) ?></span><br>

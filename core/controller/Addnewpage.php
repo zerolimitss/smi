@@ -25,10 +25,10 @@ class Addnewpage extends Admin_Base
                     $form_keys, $form_description, $form_position);
 
                 if($res) {
-                    redir_to(SITE_URL."showpages/mes/".urlencode("Страница успешно добавлена"));
+                    Utilities::redir_to(SITE_URL."showpages/mes/".urlencode("Страница успешно добавлена"));
                 }
                 else{
-                    redir_to(SITE_URL."showpages/error/".urlencode("Возникли проблемы при добавлении страницы"));
+                    Utilities::redir_to(SITE_URL."showpages/error/".urlencode("Возникли проблемы при добавлении страницы"));
                 }
             }else{
                 $this->error[] = "Не заполнены необходимые поля";

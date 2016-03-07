@@ -12,9 +12,9 @@ class Editpage extends Admin_Base
             if(empty($par['del'])) Throw new EException("Такой страницы нет");
             $id = (int)$par['del'];
             if($this->obm_u->delete_page($id)){
-                redir_to(SITE_URL."showpages/mes/".urlencode("Страница удалена"));
+                Utilities::redir_to(SITE_URL."showpages/mes/".urlencode("Страница удалена"));
             }else{
-                redir_to(SITE_URL."showpages/error/".urlencode("Возникли проблеммы при удалении страницы"));
+                Utilities::redir_to(SITE_URL."showpages/error/".urlencode("Возникли проблеммы при удалении страницы"));
             }
         }
 
@@ -40,9 +40,9 @@ class Editpage extends Admin_Base
                     $form_keys, $form_description, $form_position);
 
                 if($res)
-                    redir_to(SITE_URL."showpages/mes/".urlencode("Страница успешно обновлена"));
+                    Utilities::redir_to(SITE_URL."showpages/mes/".urlencode("Страница успешно обновлена"));
                 else
-                    redir_to(SITE_URL."showpages/error/".urlencode("Возникли проблемы при изменении страницы"));
+                    Utilities::redir_to(SITE_URL."showpages/error/".urlencode("Возникли проблемы при изменении страницы"));
             }else{
                 $this->error[] = "Не заполнены необходимые поля";
             }

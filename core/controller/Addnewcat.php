@@ -40,7 +40,7 @@ class Addnewcat extends Admin_Base
                 else $this->error[] = "Возникли проблемы при добавлении категории";
             }
 
-            redir_to(SITE_URL."showcategory/mes/".urlencode($this->message));
+            Utilities::redir_to(SITE_URL."showcategory/mes/".urlencode($this->message));
         }
 
     }

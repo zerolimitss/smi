@@ -12,7 +12,7 @@
 
                 <div class="main-news-content">
                     <span class="cat"><?=$main_news['ttt'] ?></span>
-                    <span class="date"><?=dateMain($main_news['date']); ?></span>
+                    <span class="date"><?=Utilities::dateMain($main_news['date']); ?></span>
                     <h2><a href="<?=SITE_URL ?>post/id/<?=$main_news['id'] ?>"><?=$main_news['title'] ?></a></h2>
                     <p><a href="<?=SITE_URL ?>post/id/<?=$main_news['id'] ?>"><?=$main_news['anons'] ?></a> </p>
                 </div>
@@ -26,13 +26,13 @@
 
                     <?php if($n['main_new']==0): ?>
                         <div class="other-news-blocks-i">
-                            <span class="cat"><?=date("m:s",$n['date']) ?></span><span class="date"> <?=today($n['date']); ?></span>
+                            <span class="cat"><?=date("m:s",$n['date']) ?></span><span class="date"> <?=Utilities::today($n['date']); ?></span>
                             <h4><a href="<?=SITE_URL ?>post/id/<?=$n['id'] ?>"><?=$n['title'] ?></a></h4>
                             <hr>
                         </div>
                     <?php else: ?>
                         <div class="other-news-blocks">
-                            <span class="cat"><?=$n['ttt'] ?></span><span class="date"><?=today($n['date']); ?></span>
+                            <span class="cat"><?=$n['ttt'] ?></span><span class="date"><?=Utilities::today($n['date']); ?></span>
                             <a href="<?=SITE_URL ?>post/id/<?=$n['id'] ?>"><img src="<?=SITE_URL.UPLOAD_IMG.$n['image'] ?>" alt=""></a>
                             <h3><a href="<?=SITE_URL ?>post/id/<?=$n['id'] ?>"><?=$n['title'] ?></a></h3>
                             <hr>

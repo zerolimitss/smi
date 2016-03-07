@@ -65,7 +65,7 @@ abstract class Admin_Base extends Base
     protected function check_auth()
     {
         if(!isset($_SESSION['login'])){
-            redir_to(SITE_URL.'login');
+            Utilities::redir_to(SITE_URL.'login');
         }
     }
 
