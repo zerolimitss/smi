@@ -18,7 +18,7 @@ function __autoload($name)
         try {
             throw new EException('No file');
         }catch (EException $e){
-            //echo $e->getMessage();
+            echo $e->getMessage();
         }
     }
 }
