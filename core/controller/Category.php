@@ -20,22 +20,25 @@ class Category extends Static_Page
             if(isset($par['id'])){
                 $id = (int)$par['id'];
                 if($id==0) throw new EException("Error 404 ");
-
                 $this->id = $id;
                 $this->subcategory = $this->obm->get_subcat($id);
                 $this->title .= $this->obm->get_cat_title($id);
 
                 if(isset($par['sub'])){
                     $sub = (int)$par['sub'];
-                    if($sub==0) return false;
+                    if($sub==0) throw new EException("Error 404 ");
                     $this->subId = $sub;
-
                     $this->title .= " / ".$this->obm->get_cat_title($sub);
                     $this->main_news = $this->obm->get_main_new($sub,true);
-                    $this->last_news = $this->obm->get_last_news('0,10', $sub,true);
+                    $this->last_news = $this->obm->get_last_news('0,10', $sub, true);
                 }else {
                     $this->main_news = $this->obm->get_main_new($id);
                     $this->last_news = $this->obm->get_last_news('0,10', $id);
+                    for($i=0; $i<count($this->last_news); $i++ ){
+                        if((int)$this->last_news[$i]['id'] == (int)$this->main_news['id']){
+                            unset($this->last_news[$i]);
+                        }
+                    }
                 }
             }else{
                 throw new EException("Error 404 ");
@@ -43,14 +46,11 @@ class Category extends Static_Page
         }else{
             throw new EException("Error 404 ");
         }
-
         //print_r($this->last_news1);
     }
 
     protected function output()
     {
-
-
         $this->content = $this->render('category',[
             'subcategory'=>$this->subcategory,
             'main_news'=> $this->main_news,

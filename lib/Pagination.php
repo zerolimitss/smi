@@ -46,12 +46,10 @@ class Pagination
 
         }
         return $res[0]['c'];
-
     }
 
     public function get_posts()
     {
-
         //всего страниц
         $allPages = $this->totalCount / $this->postByPage;
 
@@ -69,7 +67,6 @@ class Pagination
 
         //формула смещения
         $start = ($this->currentPage - 1) * $this->postByPage;
-
 
         //если это пагинация для поиска
         if($this->match){
@@ -134,10 +131,9 @@ class Pagination
                 $arr['left'][]=$i;
             }
         }
-        if($this->currentPage==2 && $this->currentPage < $allPages){
+        if($this->currentPage==2 ){
                 $arr['left'][]=1;
         }
-
 
         //ссылки справа от текущей страници
         if($this->currentPage < $allPages){
@@ -151,9 +147,6 @@ class Pagination
 
         //текущая страница
         $arr['current'] = $this->currentPage;
-
         return $arr;
     }
-
-
 }

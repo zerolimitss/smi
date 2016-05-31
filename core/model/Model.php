@@ -73,7 +73,7 @@ class Model
         }
         //на категорию все новости
         elseif(!empty($id) && $sub==false){
-            $sql .= "AND p.main_new NOT IN ('1','2') ";
+            //$sql .= "AND p.main_new NOT IN ('1','2') ";
             $sql .= "AND c.id IN(SELECT id FROM category WHERE parent_id=$id) ";
         }
         //на суб категорию
