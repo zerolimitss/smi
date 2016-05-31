@@ -34,7 +34,7 @@
             <?php if($last_news): ?>
                 <?php foreach($last_news as $n): ?>
                 <div class="other-news-blocks-i">
-                    <span class="cat"><?=date("m:s",$n['date']) ?></span><span class="date"> <?=Utilities::today($n['date']); ?></span>
+                    <span class="cat"><?=date("H:i",$n['date']) ?></span><span class="date"> <?=Utilities::today($n['date']); ?></span>
                     <h4><a href="<?=SITE_URL ?>post/id/<?=$n['id'] ?>"><?=$n['title'] ?></a></h4>
                     <hr>
                 </div>
